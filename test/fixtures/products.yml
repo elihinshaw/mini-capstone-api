@@ -5,9 +5,11 @@ one:
   price: 1
   image_url: MyString
   description: MyString
+  stock: 4
 
 two:
   name: MyString
   price: 1
   image_url: MyString
   description: MyString
+  stock: 9
