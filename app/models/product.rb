@@ -5,7 +5,7 @@ class Product < ApplicationRecord
   validates :price, numericality: { greater_than: 0 }
   validates :description, presence: true
   validates :description, length: { in: 10..500 }
-  validates_format_of :image_url, :with => %r{\.(png|jpg|jpeg)$}i, :message => "image must be png, jpg, or jpeg", multiline: true
+  # validates_format_of :image_url, :with => %r{\.(png|jpg|jpeg)$}i, :message => "image must be png, jpg, or jpeg", multiline: true
 
   def is_discounted?
     return price <= 10
