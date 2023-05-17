@@ -10,3 +10,4 @@ json.tax product.tax
 json.total product.total
 json.stock product.stock
 json.supplier product.supplier
+json.image product.image
