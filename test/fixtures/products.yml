@@ -5,9 +5,11 @@ one:
   price: 1
   description: MyStringMyStringMyStringMyStringMyStringMyString
   stock: 4
+  supplier: one
 
 two:
   name: MyString
   price: 1
   description: MyStringMyStringMyStringMyString
   stock: 9
+  supplier: two

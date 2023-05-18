@@ -14,13 +14,13 @@ class ProductsController < ApplicationController
       name: params["name"],
       price: params["price"],
       description: params["description"],
-      supplier_id: params[Supplier.first.id],
+      supplier_id: params["supplier_id"],
     )
-    # if @product.valid?
-    #   render :show
-    # else
-    #   render json: { errors: @product.errors.full_messages }, status: :unprocessable_entity
-    # end
+    if @product.valid?
+      render :show
+    else
+      render json: { errors: @product.errors.full_messages }, status: :unprocessable_entity
+    end
   end
 
   def update
