@@ -3,13 +3,11 @@
 one:
   name: MyString
   price: 1
-  image_url: MyString.png
   description: MyStringMyStringMyStringMyStringMyStringMyString
   stock: 4
 
 two:
   name: MyString
   price: 1
-  image_url: MyString.png
   description: MyStringMyStringMyStringMyString
   stock: 9
