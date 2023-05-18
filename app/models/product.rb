@@ -19,10 +19,6 @@ class Product < ApplicationRecord
     tax + price
   end
 
-  # def supplier
-  #   Supplier.find_by(id: supplier_id)
-  # end
-
   def images
     Image.where(product_id: id)
   end
