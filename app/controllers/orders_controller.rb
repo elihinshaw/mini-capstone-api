@@ -1,4 +1,6 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_admin
+
   def index
     if current_user
       @orders = current_user.orders
