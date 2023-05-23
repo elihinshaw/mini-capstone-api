@@ -19,6 +19,7 @@ class ProductsController < ApplicationController
       description: params["description"],
       supplier_id: params["supplier_id"],
     )
+
     if @product.valid?
       render :show
     else
