@@ -14,17 +14,24 @@ class OrdersController < ApplicationController
   end
 
   def create
-    product = Product.find_by(id: params["product_id"])
-    quantity = params["quantity"].to_i
+    carted_products = current_user.carted_products.where(status: "carted")
 
-    calculated_subtotal = product.price * quantity
-    calculated_tax = product.tax * quantity
-    calculated_total = calculated_subtotal + calculated_tax
+    calculated_subtotal = 0
+    calculated_tax = 0
+    calculated_total = 0
+
+    carted_products.each do |carted_product|
+      product = carted_product.product
+      quantity = carted_product.quantity
+  
+      calculated_subtotal = product.price * quantity
+      calculated_tax = product.tax * quantity
+      calculated_total = calculated_subtotal + calculated_tax
+    end
+
 
     @order = Order.create(
       user_id: current_user.id,
-      product_id: params["product_id"],
-      quantity: params["quantity"],
       subtotal: calculated_subtotal,
       tax: calculated_tax,
       total: calculated_total,
